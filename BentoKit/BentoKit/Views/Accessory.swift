@@ -13,6 +13,11 @@ public final class AccessoryView: InteractiveView {
         }
     }
 
+    public var becomeFirstResponderOnTap: Bool {
+        get { return highlightingGesture.becomeFirstResponderOnTap }
+        set { highlightingGesture.becomeFirstResponderOnTap = newValue }
+    }
+
     private var view: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
