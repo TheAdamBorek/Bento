@@ -13,6 +13,7 @@ extension Component {
             title: String? = nil,
             placeholder: String? = nil,
             text: TextValue? = nil,
+            isSecureTextEntry: Bool = false,
             keyboardType: UIKeyboardType = .default,
             accessory: Accessory = .none,
             textWillChange: Optional<(TextChange) -> Bool> = nil,
@@ -25,6 +26,7 @@ extension Component {
                 view.titleLabel.isHidden = title?.isEmpty ?? true
                 view.textField.placeholder = placeholder
                 view.textField.keyboardType = keyboardType
+                view.textField.isSecureTextEntry = isSecureTextEntry
                 text?.apply(to: view.textField)
                 view.accessoryView.accessory = accessory.toAccessoryViewAccessory
                 view.accessoryView.didTap = didTapAccessory
@@ -174,6 +176,7 @@ extension Component.TextInput {
         let titleStyle: View.TitleStyle
         let title: LabelStyleSheet
         let text: TextStyleSheet<UITextField>
+        
 
         public init(
             titleStyle: View.TitleStyle = .fillProportionally(0.25),
