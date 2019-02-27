@@ -176,7 +176,6 @@ extension Component.TextInput {
         let titleStyle: View.TitleStyle
         let title: LabelStyleSheet
         let text: TextStyleSheet<UITextField>
-        
 
         public init(
             titleStyle: View.TitleStyle = .fillProportionally(0.25),
